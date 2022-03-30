@@ -51,9 +51,19 @@ jar {
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
+ext {
+    log4j2Version = "2.5"
+}
+
 dependencies {
     compile "joda-time:joda-time:2.2"
     testCompile "junit:junit:4.12"
+
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: log4j2Version
+    compile group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: log4j2Version
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4j2Version
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: log4j2Version
+    runtime group: 'org.apache.logging.log4j', name: 'log4j-jul', version: log4j2Version
 }
 // end::dependencies[]
 
